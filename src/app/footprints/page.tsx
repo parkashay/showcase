@@ -34,28 +34,34 @@ const Page = () => {
   };
 
   return (
-    <>
+    <div>
       <Question>
         When user clicks on the area, then points appear on the screen. The
         points can be erased using the UNDO button and can be redrawn using the
         REDO button.
       </Question>
-      <div className="flex gap-3 my-3">
-        <button className="p-3 rounded-lg border" onClick={undo}>
-          UNDO
+      <div className="flex gap-2 my-4">
+        <button
+          className="px-4 py-2 text-sm font-body font-medium rounded-xl border border-[#E7E5E4] dark:border-[#44403C] text-[#1C1917] dark:text-[#FAFAF7] hover:bg-[#F5F5F0] dark:hover:bg-[#292524] transition-colors"
+          onClick={undo}
+        >
+          Undo
         </button>
-        <button className="p-3 rounded-lg border" onClick={redo}>
-          REDO
+        <button
+          className="px-4 py-2 text-sm font-body font-medium rounded-xl border border-[#E7E5E4] dark:border-[#44403C] text-[#1C1917] dark:text-[#FAFAF7] hover:bg-[#F5F5F0] dark:hover:bg-[#292524] transition-colors"
+          onClick={redo}
+        >
+          Redo
         </button>
       </div>
       <div
-        className=" w-full h-[70vh] border-2 rounded-lg"
+        className="w-full h-[70vh] rounded-2xl border-2 border-dashed border-[#D6D3D1] dark:border-[#44403C] bg-white dark:bg-[#1C1917]/50 cursor-crosshair transition-colors hover:border-[#B45309]/40 dark:hover:border-[#F59E0B]/40"
         onClick={(e) => addPoints(e)}
       >
         {points.map((point, index) => (
           <span
             key={index}
-            className="absolute h-[15px] w-[15px] rounded-full bg-gray-400"
+            className="absolute h-3 w-3 rounded-full bg-[#F59E0B] shadow-glow animate-scale-in"
             style={{
               left: point.x + "px",
               top: point.y + "px",
@@ -63,7 +69,7 @@ const Page = () => {
           ></span>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

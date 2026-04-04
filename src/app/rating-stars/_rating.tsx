@@ -7,7 +7,9 @@ export function Rating() {
   return (
     <section className="my-12">
       <RatingStars rating={rating} setRating={setRating} />
-      <div className="my-6 font-semibold">Applied Rating: {rating}</div>
+      <div className="my-6 font-body text-sm font-medium text-[#78716C] dark:text-[#A8A29E]">
+        Applied Rating: <span className="text-[#B45309] dark:text-[#F59E0B] font-semibold">{rating}</span>
+      </div>
     </section>
   );
 }

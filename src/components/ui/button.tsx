@@ -4,37 +4,32 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-ring",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-body font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
   {
     variants: {
       variant: {
-        // Primary: brand blue, white text
-        default: "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90",
+        default:
+          "bg-[#1C1917] dark:bg-[#FAFAF7] text-[#FAFAF7] dark:text-[#1C1917] shadow-warm hover:shadow-warm-md hover:scale-[1.01]",
 
-        // Destructive: vivid red, white text
         destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+          "bg-red-600 text-white shadow-warm hover:bg-red-700 hover:shadow-warm-md",
 
-        // Secondary: lighter blue complement
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/90",
+          "bg-[#F5F5F0] dark:bg-[#292524] text-[#1C1917] dark:text-[#FAFAF7] border border-[#E7E5E4] dark:border-[#44403C] hover:border-[#D6D3D1] dark:hover:border-[#57534E]",
 
-        // Outline: transparent bg, border + text same tone, hover gets accent
         outline:
-          "border border-border text-border bg-transparent hover:bg-accent hover:text-accent-foreground",
+          "border border-[#E7E5E4] dark:border-[#44403C] text-[#1C1917] dark:text-[#FAFAF7] bg-transparent hover:bg-[#F5F5F0] dark:hover:bg-[#292524]",
 
-        // Ghost: transparent bg, subtle hover with blue tint
         ghost:
-          "bg-transparent text-foreground hover:bg-accent/60 hover:text-accent-foreground",
+          "bg-transparent text-[#1C1917] dark:text-[#FAFAF7] hover:bg-[#F5F5F0] dark:hover:bg-[#292524]",
 
-        // Link: inline blue text, underline on hover
-        link: "text-primary underline-offset-4 hover:underline hover:text-primary/80",
+        link: "text-[#B45309] dark:text-[#F59E0B] underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        default: "h-10 px-5 py-2 has-[>svg]:px-4",
+        sm: "h-9 rounded-lg gap-1.5 px-3.5 has-[>svg]:px-3",
+        lg: "h-11 rounded-xl px-7 has-[>svg]:px-5",
+        icon: "size-10",
       },
     },
     defaultVariants: {

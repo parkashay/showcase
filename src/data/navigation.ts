@@ -30,9 +30,9 @@ export const navigationItems = [
     icon: "🎮",
   },
   {
-    title: "Canvas Playground",
-    description: "Interactive canvas playground for testing and prototyping",
-    href: "/canvas",
-    icon: "🖼️",
+    title: "Panorama Viewer",
+    description: "Upload and explore 360° panorama images interactively",
+    href: "/panorama-viewer",
+    icon: "🌍",
   },
 ];
