@@ -20,7 +20,8 @@ export function DraggableContainer() {
     height: MIN_HEIGHT,
   });
 
-  const defaultCornerStyles = "absolute size-3 bg-white";
+  const defaultCornerStyles =
+    "absolute size-3 bg-white dark:bg-[#FAFAF7] shadow-warm";
 
   const handleMouseMove = (e: MouseEvent) => {
     const { movementX, movementY } = e;
@@ -79,7 +80,7 @@ export function DraggableContainer() {
 
   return (
     <section className="relative size-full">
-      <div id="drag-overlay-root" className="absolute size-full overflow-hidden">
+      <div id="drag-overlay-root" className="absolute size-full overflow-hidden rounded-2xl">
         <div
           id="draggable-container"
           ref={containerRef}
@@ -93,15 +94,15 @@ export function DraggableContainer() {
         >
           <div
             id="contents"
-            className="box-border outline outline-1 rounded overflow-hidden size-full p-6 select-none"
+            className="box-border outline outline-1 outline-[#E7E5E4] dark:outline-[#44403C] rounded-xl overflow-hidden size-full p-6 select-none bg-white/80 dark:bg-[#1C1917]/80 backdrop-blur-sm shadow-warm-lg"
           >
             <div
               id="pan"
               className={cn(
-                "absolute top-0 left-1/2 -translate-x-1/2 bg-yellow-400 h-3 w-6 rounded-b cursor-move",
-                {
-                  "bg-emerald-500": activeItem === "pan",
-                }
+                "absolute top-0 left-1/2 -translate-x-1/2 h-3 w-8 rounded-b-lg cursor-move transition-colors duration-200",
+                activeItem === "pan"
+                  ? "bg-[#B45309] dark:bg-[#F59E0B]"
+                  : "bg-[#E7E5E4] dark:bg-[#44403C] hover:bg-[#D6D3D1] dark:hover:bg-[#57534E]"
               )}
               onMouseDown={() => handleMouseDown("pan")}
             ></div>
@@ -109,9 +110,9 @@ export function DraggableContainer() {
               id="tl"
               className={cn(
                 defaultCornerStyles,
-                "top-0 left-0 rounded-br cursor-nw-resize",
+                "top-0 left-0 rounded-br-lg cursor-nw-resize transition-colors duration-200",
                 {
-                  "bg-emerald-500": activeItem === "tl",
+                  "bg-[#B45309] dark:bg-[#F59E0B]": activeItem === "tl",
                 }
               )}
               onMouseDown={() => handleMouseDown("tl")}
@@ -120,9 +121,9 @@ export function DraggableContainer() {
               id="tr"
               className={cn(
                 defaultCornerStyles,
-                "top-0 right-0 rounded-bl cursor-ne-resize",
+                "top-0 right-0 rounded-bl-lg cursor-ne-resize transition-colors duration-200",
                 {
-                  "bg-emerald-500": activeItem === "tr",
+                  "bg-[#B45309] dark:bg-[#F59E0B]": activeItem === "tr",
                 }
               )}
               onMouseDown={() => handleMouseDown("tr")}
@@ -131,9 +132,9 @@ export function DraggableContainer() {
               id="bl"
               className={cn(
                 defaultCornerStyles,
-                "bottom-0 left-0 rounded-tr cursor-ne-resize",
+                "bottom-0 left-0 rounded-tr-lg cursor-ne-resize transition-colors duration-200",
                 {
-                  "bg-emerald-500": activeItem === "bl",
+                  "bg-[#B45309] dark:bg-[#F59E0B]": activeItem === "bl",
                 }
               )}
               onMouseDown={() => handleMouseDown("bl")}
@@ -142,15 +143,15 @@ export function DraggableContainer() {
               id="br"
               className={cn(
                 defaultCornerStyles,
-                "bottom-0 right-0 rounded-tl cursor-nw-resize",
+                "bottom-0 right-0 rounded-tl-lg cursor-nw-resize transition-colors duration-200",
                 {
-                  "bg-emerald-500": activeItem === "br",
+                  "bg-[#B45309] dark:bg-[#F59E0B]": activeItem === "br",
                 }
               )}
               onMouseDown={() => handleMouseDown("br")}
             ></div>
-            <div id="children" className="text-center">
-              Some children can also be rendered inside the container
+            <div id="children" className="text-center font-body text-sm text-[#78716C] dark:text-[#A8A29E]">
+              Drag to reposition. Pull corners to resize.
             </div>
           </div>
         </div>
