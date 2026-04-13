@@ -13,17 +13,17 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <div className="animate-fade-in-up">
             <span className="inline-block text-xs font-body font-medium tracking-[0.2em] uppercase text-[#B45309] dark:text-[#F59E0B] mb-6 border border-[#E7E5E4] dark:border-[#44403C] px-4 py-1.5 rounded-full">
-              Personal Collection
+              Side Projects & Experiments
             </span>
           </div>
 
           <h1 className="animate-fade-in-up delay-100 font-display text-5xl md:text-7xl font-bold text-[#1C1917] dark:text-[#FAFAF7] leading-[1.1] mb-8">
-            Random React
-            <span className="block text-[#B45309] dark:text-[#F59E0B]">Library</span>
+            Project
+            <span className="block text-[#B45309] dark:text-[#F59E0B]">Showcase</span>
           </h1>
 
           <p className="animate-fade-in-up delay-200 font-body text-lg md:text-xl text-[#78716C] dark:text-[#A8A29E] max-w-xl mx-auto mb-10 leading-relaxed">
-            Stuff I built in my free time — some handcrafted, some vibe-coded, all stuffed into one repo because why not.
+            A growing collection of side projects, mini apps, and code snippets I've built — useful bits worth keeping around.
           </p>
 
           <div className="animate-fade-in-up delay-300 flex flex-wrap justify-center gap-3">
