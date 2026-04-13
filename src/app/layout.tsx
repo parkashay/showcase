@@ -11,8 +11,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "React Component Library",
-  description: "A collection of reusable React components.",
+  title: "React Showcase",
+  description: "Showcase of playful creations.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
